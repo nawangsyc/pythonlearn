@@ -9,3 +9,10 @@ while True:
     cmd = cmd.lower()
     if '否' == cmd:
         break
+
+formula = input('请输入公式：')
+value = input('你输入的数值是：')
+value = float(value)
+x = value
+z = eval(formula)
+print('结果为:', z)
