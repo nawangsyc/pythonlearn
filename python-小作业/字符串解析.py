@@ -4,7 +4,9 @@ ready = formula.replace('x', value)
 ops = []
 expression = []
 stack_value = []
-ops_rule = {'+': 1,'-': 1,'*': 2,'/': 2,'^': 3}
+ops_rule = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
+
+
 # 将字符串转换成逆波兰表达式
 def middle_to_after(ready):
     for item in ready:
@@ -64,4 +66,6 @@ def cal(n1, n2, op):
 
 middle_to_after(ready)
 expression_to_value(expression)
+print(ready)
+print(expression)
 print('计算的结果为：{0}'.format(stack_value[0]))
