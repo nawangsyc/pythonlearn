@@ -4,13 +4,7 @@ ready = formula.replace('x', value)
 ops = []
 expression = []
 stack_value = []
-ops_rule = {
-    '+': 1,
-    '-': 1,
-    '*': 2,
-    '/': 2,
-    '^': 3
-}
+ops_rule = {'+': 1,'-': 1,'*': 2,'/': 2,'^': 3}
 # 将字符串转换成逆波兰表达式
 def middle_to_after(ready):
     for item in ready:
