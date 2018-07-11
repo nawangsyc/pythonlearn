@@ -1,4 +1,4 @@
-formula = input('请输入公式：')
+formula = input('请输入公式：')# 输入的表达式不带空格
 value = input('你输入的数值是：')
 ready = formula.replace('x', value)
 
