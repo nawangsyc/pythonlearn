@@ -10,4 +10,4 @@ except Exception as e:
 else:
     print("No Exception")
 finally:
-    print("反正我会被执行")
+    print("我肯定会被执行的")

@@ -1,9 +1,9 @@
-l = [1,2,3,4,5]
-
-#print(l[10])
-
-#print(l.liudana)
-
-# 常常犯的除零错误
-num = int(input('input your num:'))
-print(100/num)
+def getInput():
+    try:
+        txt = input()   # "请输入整数: "
+        while eval(txt) != int(txt):
+            txt = input()   # "请输入整数: "
+    except:
+        return getInput()
+    return eval(txt)
+print(getInput())

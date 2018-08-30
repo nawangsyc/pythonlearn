@@ -1,6 +1,17 @@
-import time
-import locale
-locale.setlocale(locale.LC_CTYPE, 'chinese')
-t = time.localtime()
-ft = time.strftime('%Y年%m月%d日 %H:%M',t)
-print(ft)
+import random
+random.seed(0x1010)
+s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*'
+ls = []
+excludes = ''
+while len(ls)<10:
+    pwd = ''
+    for i in range(10):
+        pwd += s[random.randint(0,len(s)-1)]
+    if pwd[0] in excludes:
+        continue
+    else:
+        ls.append(pwd)
+        excludes += pwd[0]
+f = open('随机密码.txt','w')
+f.write('\n'.join(ls))
+f.close()
