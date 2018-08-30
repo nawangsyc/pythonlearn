@@ -14,6 +14,7 @@
 
 '''
 
+'''
 from collections import Counter
 def getTxt1():
     txt1 = open('命运-网络版.txt','r',encoding = 'utf-8').read()
@@ -48,3 +49,22 @@ for i in range(100):
 f2 = open('寻梦-字符统计.txt','w')
 f2.write(','.join(ls4))
 f2.close()
+
+'''
+from collections import Counter
+names = ['命运','寻梦']
+for name in names:
+    f0 = open(name + '-网络版.txt','r',encoding = 'utf-8')
+    f1 = open(name + '-字符统计.txt', 'w', encoding='utf-8')
+    txt = f0.read()
+    counter = Counter(txt)
+    del counter['\n']
+    ls1 = list(counter.items())
+    ls1.sort(key = lambda x:x[1],reverse = True)
+    ls2 = []
+    for i in range(100):
+        k,v = ls1[i]
+        ls2.append("{}:{}".format(k,v))
+    f1.write(','.join(ls2))
+    f0.close()
+    f1.close()
